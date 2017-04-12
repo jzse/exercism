@@ -4,12 +4,9 @@
 //
 
 class HelloWorld {
-  hello() {
-    //
-    // YOUR CODE GOES HERE
-    //
+  hello(name = 'World') {
+    return `Hello, ${name}!`;
   }
 }
 
 export default HelloWorld;
-
