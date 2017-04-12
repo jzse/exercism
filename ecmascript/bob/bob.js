@@ -1,13 +1,16 @@
 class Bob {
   hey(message) {
-    // Minimum of 2 uppercase chars and ends '!' OR all uppercase chars.
-    if ((message.endsWith('!') && /[A-Z]{2}/.test(message)) || /^[A-Z][A-Z\d\W]+$/.test(message)) {
+    const isExclamation = message.endsWith('!');
+    const isYellShort = /[A-Z]{2}/.test(message);
+    const isYellAll = /^[A-Z][A-Z\d\W]+$/.test(message);
+    const isQuestion = message.endsWith('?');
+    const isSilence = !message || /^[\s]*$/.test(message);
+
+    if ((isExclamation && isYellShort) || isYellAll) {
       return 'Whoa, chill out!';
-      // Ends with '?'
-    } else if (message.endsWith('?')) {
+    } else if (isQuestion) {
       return 'Sure.';
-      // Empty message or contains just spaces.
-    } else if (!message || /^[\s]*$/.test(message)) {
+    } else if (isSilence) {
       return 'Fine. Be that way!';
     }
     return 'Whatever.';
