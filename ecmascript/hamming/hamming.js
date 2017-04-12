@@ -3,8 +3,7 @@ class Hamming {
     if (first.length !== second.length) {
       throw new Error('DNA strands must be of equal length.');
     } else {
-      const firstList = first.split('');
-      return firstList.reduce(
+      return [...first].reduce(
         (distance, value, index) => {
           if (value !== second[index]) {
             distance += 1;
