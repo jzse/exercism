@@ -4,8 +4,8 @@ class Hamming {
       throw new Error('DNA strands must be of equal length.');
     } else {
       return [...first].reduce(
-        (distance, value, index) => {
-          if (value !== second[index]) {
+        (distance, nucleotide, index) => {
+          if (nucleotide !== second[index]) {
             distance += 1;
           }
           return distance;
