@@ -7,8 +7,7 @@ const DNA_RNA = {
 
 class Transcriptor {
   toRna(dna) {
-    const dnaArray = dna.split('');
-    return dnaArray
+    return [...dna]
       .map((nucleotide) => {
         if (!(nucleotide in DNA_RNA)) {
           throw new Error('Invalid input DNA.');
