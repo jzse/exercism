@@ -11,7 +11,7 @@ class PerfectNumbers {
 
   getAliquotSum(number) {
     const factors = this.getFactors(number);
-    const factorsSansNumber = factors.splice(-1);
+    const factorsSansNumber = factors.slice(0, -1);
     const aliquotSum = factorsSansNumber.reduce(
       (accumulator, currentValue) => accumulator + currentValue,
       0,
@@ -20,6 +20,11 @@ class PerfectNumbers {
   }
 
   classify(number) {
+    if (number === 0) {
+      throw new Error('Classification is only possible for natural numbers.');
+    } else if (number < 0) {
+      throw new Error('Classification is only possible for natural numbers.');
+    }
     const aliquotSum = this.getAliquotSum(number);
     if (aliquotSum === number) {
       return 'perfect';
