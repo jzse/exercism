@@ -10,11 +10,11 @@ describe('Exercise - Perfect Numbers', () => {
       expect(perfectNumbers.classify(6)).toEqual('perfect');
     });
 
-    xit('Medium perfect number is classified correctly', () => {
+    it('Medium perfect number is classified correctly', () => {
       expect(perfectNumbers.classify(28)).toEqual('perfect');
     });
 
-    xit('Large perfect number is classified correctly', () => {
+    it('Large perfect number is classified correctly', () => {
       expect(perfectNumbers.classify(33550336)).toEqual('perfect');
     });
 
