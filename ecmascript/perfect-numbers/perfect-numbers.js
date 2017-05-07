@@ -20,9 +20,7 @@ class PerfectNumbers {
   }
 
   classify(number) {
-    if (number === 0) {
-      throw new Error('Classification is only possible for natural numbers.');
-    } else if (number < 0) {
+    if (number < 1) {
       throw new Error('Classification is only possible for natural numbers.');
     }
     const aliquotSum = this.getAliquotSum(number);
